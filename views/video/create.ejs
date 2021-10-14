@@ -1,0 +1,42 @@
+<%- include('../partials/head')-%>
+<!-- <%- include('../partials/header')-%> -->
+
+<!-- Main Body Start-->
+<main class="mainBody displayFlex">
+    <div class="container-form">
+        <div class="heading">
+           <div class="centerMe mt-5">
+               <h1>Create a video</h1>
+               
+            <%- include('../messages') -%>
+             <form method="POST" action="/video/create" enctype="multipart/form-data" class="p-5">
+               
+                <div class="form-group">
+                    <label for="value">Video Title</label>
+                    <input name="text" type="text" id="" placeholder="Enter video title" required>
+                </div>
+                <div class="form-group">
+                    <label for="image">Upload Image</label>
+                    <input name="image" type="file" accept="image/*" id="image"  required>
+                </div>
+                <div class="form-group">
+                    <label for="video">Upload Video</label>
+                    <input name="video" type="file" accept="video/*"  id="video"  required>
+                </div>
+                <div class="form-group">
+                    <label for="value">Description</label>
+                    <input name="description" type="" id="" required>
+                </div>
+               
+                <button type="submit" class="btn btn-primary">Submit</button>
+    
+                <div class="form-group form-check mt-3">
+                    <p>Don't have an account? <a href="/auth/register">Register Now</a></p>
+                </div>
+                
+              </form>
+           </div>
+        </div>
+    </div>
+</main>
+    <%- include('../partials/foot')-%>

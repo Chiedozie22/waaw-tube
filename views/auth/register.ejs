@@ -1,0 +1,64 @@
+<%-  include('../partials/head') -%>
+
+<div class="register-container">
+    <div>
+        <h3>Welcome to waawtube</h3>
+        <p>Sign up to waawtube</p>
+
+				<%- include('../messages') -%>
+      <form action="/auth/register" method="POST">
+        <div>
+            <label for="Username">Username</label>
+            <input type="text" name="username" placeholder="" required>
+        </div>
+
+        <div>
+            <label for="email">Email</label>
+            <input type="email" name="email" placeholder="" required>
+        </div>
+
+        <div>
+            <label for="Date of Birth">Date of Birth</label>
+            <input type="date" name="dateOfBirth" placeholder="" required>
+        </div>
+
+        <div>
+            <label for="Password">Password</label>
+            <input type="text" name="password" placeholder="" required>
+        </div>
+
+        <div>
+            <label for="Confirm Password">Confirm Password</label>
+            <input type="text" name="confirmPassword" placeholder="" required>
+        </div>
+        
+        <p>Already have an Account <a href="/auth/login">Login</a></p>
+        <button type="Submit">Continue</button>
+
+        <script>
+            const form = document.getElementById("register-container")
+						form.addEventListener("submit", registerUser)
+
+						// async function registerUser(event) {
+						// 	event.preventDefault()
+						// 	const username = document.getElementById('username')
+						// 	const password = document.getElementById('password')
+
+						// 	const result = await fetch('/auth/register', {
+						// 		method: 'POST',
+						// 		headers: {
+						// 			'Content-Type': 'application/json'
+						// 		},
+						// 		body: JSON.stringify({
+						// 			username,
+						// 			password
+						// 		})
+						// 	}) .then((res) => res.json())
+						// 	console.log(result)
+						// };
+        </script>
+    </form>
+    </div>
+    
+</div>
+<%-  include('../partials/foot') -%>

@@ -1,0 +1,32 @@
+<div class="container">
+    <% if(success_message && success_message.length > 0) { %>
+        <div class="alert alert-success just-go" role="alert">
+            <%= success_message %>
+
+                <button type="button" class="close" >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+
+          </div>
+    <% } %>
+  
+    <% if(error_message && error_message.length > 0){ %>
+        <div class="alert alert-danger just-go" role="alert">
+            <%= error_message %>
+
+             <button type="button" class="close" >
+                <span aria-hidden="true">&times;</span>
+             </button>
+
+          </div>
+
+    <% } %>
+ </div>
+ <script>
+     setTimeout(function bClose(){
+         var x = document.getElementByClassName("alert-primary");
+         for (var i = 0; i < x.length; i++) {
+             x[i].style.display = "none";
+         }
+     }, 15000)
+ </script>
